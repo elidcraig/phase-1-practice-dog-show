@@ -14,8 +14,14 @@ function renderDogTable(dogsArray) {
         dogNameCell.textContent = dogObj.name 
         dogBreedCell.textContent = dogObj.breed 
         dogSexCell.textContent = dogObj.sex
+
         editButton.textContent = 'Edit'
         editButtonCell.appendChild(editButton)
+        editButton.addEventListener('click', () => {
+            dogEditorForm.name.value = dogObj.name
+            dogEditorForm.breed.value = dogObj.breed
+            dogEditorForm.sex.value = dogObj.sex
+        })
         
         dogRow.appendChild(dogNameCell)
         dogRow.appendChild(dogBreedCell)
@@ -27,6 +33,10 @@ function renderDogTable(dogsArray) {
     
 
 }
+
+dogEditorForm.addEventListener('submit', e => {
+
+})
 
 fetch('http://localhost:3000/dogs')
     .then(resp => resp.json())
