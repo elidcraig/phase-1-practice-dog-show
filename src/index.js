@@ -35,7 +35,7 @@ function renderDogTable(dogsArray) {
 }
 
 dogEditorForm.addEventListener('submit', e => {
-
+    
 })
 
 fetch('http://localhost:3000/dogs')
